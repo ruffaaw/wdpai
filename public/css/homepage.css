@@ -160,7 +160,11 @@ section {
 }
 
 .products>div>div>h1 {
-      margin: 1em, 1em;
+      margin: 1em, 0;
+}
+
+.products>div>div>p {
+      margin: 0 0 1em 0;
 }
 
 .add-to-cart {
@@ -174,5 +178,6 @@ section {
 }
 
 .add-to-cart>a {
-      font-size: 1.2em;
+      font-size: 1.0em;
+      color: #fcfcfc;
 }
