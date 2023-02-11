@@ -5,17 +5,17 @@ require_once 'AppController.php';
 class DefaultController extends AppController{
 
     public function index() {
-        //TODO display login.php
+        // TODO display login.php
         $this->render('login');
     }
 
     public function projects() {
-        //TODO display projects.php
+        // TODO display projects.php
         $this->render('projects');
     }
 
-    public function homepage() {
-        // TODO display homepage.html
+/*    public function homepage() {
+        // TODO display homepage.php
         $this->render('homepage');
     }
 
@@ -25,21 +25,21 @@ class DefaultController extends AppController{
     }
 
     public function product() {
-        // TODO diplay product.html
+        // TODO diplay product.php
         $this->render('product');
     }
 
     public function profile() {
-        // TODO diplay profile.html
+        // TODO diplay profile.php
         $this->render('profile');
     }
 
     public function search() {
-        // TODO diplay search.html
+        // TODO diplay search.php
         $this->render('search');
     }
     public function shoppingCart() {
-        // TODO diplay shoppingCart.html
+        // TODO diplay shoppingCart.php
         $this->render('shoppingCart');
-    }
+    }*/
 }

@@ -9,7 +9,7 @@ class SecurityController extends AppController
     {
         $user = new User('jsnow@pk.edu.pl', 'admin', 'John', 'Snow');
 
-        if($this->isPost()) {
+        if(!$this->isPost()) {
             return $this->login('login');
         }
 
@@ -24,11 +24,10 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ["Wrong password"]]);
         }
 
-        //return $this->render('projects');
+/*        return $this->render('projects');*/
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/projects");
-
 
     }
 }
