@@ -38,5 +38,8 @@ class DefaultController extends AppController{
             // TODO diplay search.html     
             $this->render('search');
       }
-
+      public function shoppingCart() {
+            // TODO diplay shoppingCart.html     
+            $this->render('shoppingCart');
+      }
 }
