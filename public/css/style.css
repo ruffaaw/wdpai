@@ -1,96 +1,96 @@
 body{
-      margin: 0;
-      background: #FCFCFC;
+    margin: 0;
+    background: #FCFCFC;
 }
 
 .container{
-      width: 100vw;
-      height: 100vh;
-      background: #FCFCFC;
+    width: 100vw;
+    height: 100vh;
+    background: #FCFCFC;
 
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo{
-      width: 50%;
-      text-align: center;
+    width: 50%;
+    text-align: center;
 }
 
 .login-container{
-      width: 50%;
+    width: 50%;
 }
 
 form.login {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 40vh;
 
-      background: #E6000C;
-      border: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 43px;
+    background: #E6000C;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 43px;
 }
 
 button {
-      background: #FCFCFC;
-      border-radius: 30px;
-      width: 45%;
-      border: none;
-      color: #E6000C;
-      margin: 1em;
-      line-height: 2.5em;
+    background: #FCFCFC;
+    border-radius: 30px;
+    width: 45%;
+    border: none;
+    color: #E6000C;
+    margin: 1em;
+    line-height: 2.5em;
 }
 
 input {
-      background: #D9D9D9;
-      border-radius: 30px;
-      border: none;
-      border-bottom: 1px solid gray;
-      padding: 1em;
-      margin: 1em;
-      width: 50%;
-      outline-style: none;
+    background: #D9D9D9;
+    border-radius: 30px;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    outline-style: none;
 }
 
 @media only screen and (max-device-width:420px){
-      .container{
-            flex-direction: column;
-      }
+    .container{
+        flex-direction: column;
+    }
 
-      * {
-            font-size: 36px;
-      }
+    * {
+        font-size: 36px;
+    }
 
-      .login-container {
-            width: 100%;
+    .login-container {
+        width: 100%;
 
-      }
+    }
 
-      .logo {
-            width: 100%;
-            height: 32%;
-      }
+    .logo {
+        width: 100%;
+        height: 32%;
+    }
 
-      form {
-            margin: auto;
-      }
+    form {
+        margin: auto;
+    }
 
-      img{
-            height: 19em;
-            margin: -1em;
-      }
+    img{
+        height: 19em;
+        margin: -1em;
+    }
 }
 
 .base-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      font-family: Segoe UI;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    font-family: Segoe UI;
+}

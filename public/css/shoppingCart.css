@@ -1,28 +1,28 @@
 .shopping-cart-inscription {
-      font-size: 20px;
-      line-height: 28px;
-      display: flex;
-      align-items: center;
-      color: #E6000C;
-      margin: 2em 0 0 3em;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #E6000C;
+    margin: 2em 0 0 3em;
 }
 
 .content {
-      text-align: center;
-      margin:6em auto;
+    text-align: center;
+    margin:6em auto;
 }
 
 .content>h2{
-      font-size: 30px;
+    font-size: 30px;
 }
 
 .cart-button>a {
-      font-size: 20px;
-      background: #E6000C;
-      border-radius: 50px;
-      box-shadow: 0px 3px 6px #00000029;
-      color: #fcfcfc;
-      letter-spacing: 0.1em;
-      text-align: center;
-      width: 15%;
+    font-size: 20px;
+    background: #E6000C;
+    border-radius: 50px;
+    box-shadow: 0px 3px 6px #00000029;
+    color: #fcfcfc;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 15%;
 }

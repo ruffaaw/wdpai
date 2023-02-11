@@ -3,43 +3,43 @@
 require_once 'AppController.php';
 
 class DefaultController extends AppController{
-      
-      public function index() {
-            //TODO display login.html
-            $this->render('login');
-      }
 
-      public function projects() {
-            //TODO display projects.html
-            $this->render('projects');
-      }
+    public function index() {
+        //TODO display login.php
+        $this->render('login');
+    }
 
-      public function homepage() {
-            // TODO display homepage.html
-            $this->render('homepage');
-      }
+    public function projects() {
+        //TODO display projects.php
+        $this->render('projects');
+    }
 
-      public function login() {
-            // TODO diplay login.html  
-            $this->render('login');
-      }
+    public function homepage() {
+        // TODO display homepage.html
+        $this->render('homepage');
+    }
 
-      public function product() {
-            // TODO diplay product.html
-            $this->render('product');
-      }
+    public function login() {
+        // TODO diplay login.php
+        $this->render('login');
+    }
 
-      public function profile() {
-            // TODO diplay profile.html     
-            $this->render('profile');
-      }
+    public function product() {
+        // TODO diplay product.html
+        $this->render('product');
+    }
 
-      public function search() {
-            // TODO diplay search.html     
-            $this->render('search');
-      }
-      public function shoppingCart() {
-            // TODO diplay shoppingCart.html     
-            $this->render('shoppingCart');
-      }
+    public function profile() {
+        // TODO diplay profile.html
+        $this->render('profile');
+    }
+
+    public function search() {
+        // TODO diplay search.html
+        $this->render('search');
+    }
+    public function shoppingCart() {
+        // TODO diplay shoppingCart.html
+        $this->render('shoppingCart');
+    }
 }
