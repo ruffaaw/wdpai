@@ -114,29 +114,54 @@ section {
       grid-gap: 2em;
       padding: 2em;
       overflow: auto;
-  }
+}
   
-  .projects>div>img {
+.projects>div>img {
       height: 50%;
       width: 100%;
       object-fit: cover;
       border-radius: 1em 1em 0 0;
-  }
+}
   
-  .projects>div>div {
+.projects>div>div {
     height: 50%;
     margin: 1em;
     color: #2699FB;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
+}
   
-  .projects>div {
+.projects>div {
     border: 1px solid gray;
     border-radius: 1em 1em 0 0;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
+
+section.project-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-form > form> button {
+    width: 50%;
+    height: 10%;
+    background: #E6000C;
+    font-size: 1.0em;
+    color: #fcfcfc;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 0 2em 0;
+    justify-content: center;
+    font-family: Segoe UI;
+}

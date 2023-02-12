@@ -14,7 +14,7 @@ class DefaultController extends AppController{
         $this->render('projects');
     }
 
-/*    public function homepage() {
+    public function homepage() {
         // TODO display homepage.php
         $this->render('homepage');
     }
@@ -41,5 +41,5 @@ class DefaultController extends AppController{
     public function shoppingCart() {
         // TODO diplay shoppingCart.php
         $this->render('shoppingCart');
-    }*/
+    }
 }
