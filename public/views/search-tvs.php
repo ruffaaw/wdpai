@@ -81,7 +81,7 @@
                     </a>
                 </div>
                 <div class="profile">
-                    <a href="profile">
+                    <a href="#">
                         <form>
                             <i class="fa-solid fa-user"></i>
                         </form>

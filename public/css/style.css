@@ -94,3 +94,23 @@ input, textarea{
     height: 100vh;
     font-family: Segoe UI;
 }
+
+nav>div>a, img{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+    width: 90%;
+    margin: 1em 0 5em 1em;
+}
+
+nav>div>a>img {
+    margin: 1em 0 5em 1em;
+}
+
+nav>div>a{
+    margin: 0 0 0 1em;
+    height: 45%;
+}

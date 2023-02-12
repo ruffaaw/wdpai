@@ -9,7 +9,11 @@
 <body>
     <div class="base-container">
         <nav>
-            <img src="public/img/name.svg">
+            <div>
+                <a href="homepage">
+                    <img src="public/img/name.svg">
+                </a>
+            </div>
             <ul>
                 <li>
                     <i class="fa-sharp fa-solid fa-diagram-project"></i>
@@ -60,7 +64,7 @@
                     <textarea name="description" rows="5" placeholder="description"></textarea>
 
                     <input type="file" name="file">
-                    <button type="submit">send</button>
+                    <button type="submit">SEND</button>
                 </form>
             </section>
         </main>

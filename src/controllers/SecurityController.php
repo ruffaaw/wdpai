@@ -27,7 +27,7 @@ class SecurityController extends AppController
 /*        return $this->render('projects');*/
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/projects");
+        header("Location: {$url}/homepage");
 
     }
 }

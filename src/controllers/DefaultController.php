@@ -38,8 +38,24 @@ class DefaultController extends AppController{
         // TODO diplay search.php
         $this->render('search');
     }
+    public function searchDesktops() {
+        // TODO diplay search-desktops.php
+        $this->render('search-desktops');
+    }
+    public function searchLaptops() {
+        // TODO diplay search-laptops.php
+        $this->render('search-laptops');
+    }
+    public function searchSmartphones() {
+        // TODO diplay search-smartphones.php
+        $this->render('search-smartphones');
+    }
+    public function searchTvs() {
+        // TODO diplay search-tvs.php
+        $this->render('search-tvs');
+    }
     public function shoppingCart() {
-        // TODO diplay shoppingCart.php
-        $this->render('shoppingCart');
+        // TODO diplay shopping-cart.php
+        $this->render('shopping-cart');
     }
 }

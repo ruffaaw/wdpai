@@ -9,7 +9,11 @@
 <body>
     <div class="base-container">
         <nav>
-            <img src="public/img/name.svg">
+            <div>
+                <a href="homepage">
+                    <img src="public/img/name.svg">
+                </a>
+            </div>
             <ul>
                 <li>
                     <i class="fa-sharp fa-solid fa-diagram-project"></i>

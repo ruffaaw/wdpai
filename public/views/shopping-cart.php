@@ -2,9 +2,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">
-    <link rel="stylesheet" type="text/css" href="public/css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="public/css/shoppingCart.css">
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
-    <title> HOMEPAGE</title>
+    <title> SHOPPING CART</title>
 </head>
 
 <body>
@@ -64,18 +64,17 @@
                     </a>
                 </div>
             </header>
-            <section class="products">
-                <div id="project1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
+            <span>
+                <div class="shopping-cart-inscription">
+                    <h1>SHOPPING CART</h1>
+                </div>
+                <div class="content">
+                    <h2 class="empty-cart"> Your cart is empty</h2>
+                    <div class="cart-button">
+                        <a class="button" href="homepage">Go to homepage</a>
                     </div>
                 </div>
-            </section>
+            </span>
         </main>
     </div>
 </body>
