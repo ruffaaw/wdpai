@@ -20,6 +20,9 @@ class SecurityController extends AppController
 
         $user = $userRepository->getUser();
 
+        var_dump($user);
+        die();
+
         if(!$user) {
             $this->render('login', ['messages' => ['User not exist!']]);
         }
@@ -31,10 +34,10 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ["Wrong password"]]);
         }
 
-/*        return $this->render('projects');*/
+        return $this->render('projects');
 
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/homepage");
+/*        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/homepage");*/
 
     }
 }

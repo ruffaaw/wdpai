@@ -11,7 +11,7 @@ services:
             - .:/app/
         links:
             - php
-            - localhost
+            - db
 
     php:
         build:
@@ -20,7 +20,7 @@ services:
         volumes:
             - .:/app/
 
-    localhost:
+    db:
         image: postgres:latest
         restart: always
         environment:

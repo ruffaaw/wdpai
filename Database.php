@@ -13,7 +13,7 @@ class Database
     {
         $this->username = 'postgres';
         $this->password = 'user';
-        $this->host = 'localhost';
+        $this->host = 'db';
         $this->database = 'postgres';
     }
 
