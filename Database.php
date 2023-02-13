@@ -12,7 +12,7 @@ class Database
     public function __construct()
     {
         $this->username = 'postgres';
-        $this->password = 'user';
+        $this->password = 'dbpwd';
         $this->host = 'db';
         $this->database = 'postgres';
     }

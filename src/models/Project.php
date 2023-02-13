@@ -6,11 +6,6 @@ class Project
     private $description;
     private $image;
 
-    /**
-     * @param $title
-     * @param $description
-     * @param $image
-     */
     public function __construct($title, $description, $image)
     {
         $this->title = $title;

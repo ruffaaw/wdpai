@@ -12,16 +12,14 @@ class SecurityController extends AppController
         $userRepository = new UserRepository();
 
         if(!$this->isPost()) {
-            return $this->login('login');
+            return $this->render('login');
         }
 
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $user = $userRepository->getUser();
 
-        var_dump($user);
-        die();
+        $user = $userRepository->getUser($email);
 
         if(!$user) {
             $this->render('login', ['messages' => ['User not exist!']]);
@@ -34,10 +32,10 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ["Wrong password"]]);
         }
 
-        return $this->render('projects');
+/*        return $this->render('projects');*/
 
-/*        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/homepage");*/
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/homepage");
 
     }
 }
