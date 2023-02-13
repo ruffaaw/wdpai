@@ -1,6 +1,6 @@
 <?php
 
-// require_once "config.php";
+//require_once "config.php";
 
 class Database
 {
@@ -11,10 +11,15 @@ class Database
 
     public function __construct()
     {
-        $this->username = 'postgres';
+        /*$this->username = USERNAME;
+        $this->password = PASSWORD;
+        $this->host = HOST;
+        $this->database = DATABASE;*/
+
+        $this->username = 'dbuser';
         $this->password = 'dbpwd';
         $this->host = 'db';
-        $this->database = 'postgres';
+        $this->database = 'dbname';
     }
 
     public function connect()
@@ -29,6 +34,7 @@ class Database
 
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             return $conn;
         }
         catch(PDOException $e) {

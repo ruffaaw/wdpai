@@ -24,6 +24,7 @@ class SecurityController extends AppController
         if(!$user) {
             $this->render('login', ['messages' => ['User not exist!']]);
         }
+
         if ($user->getEmail() !== $email) {
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
