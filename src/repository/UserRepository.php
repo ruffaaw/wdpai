@@ -8,7 +8,6 @@ require_once __DIR__ . '/../exceptions/UnknownUsersException.php';
 
 class UserRepository extends Repository
 {
-
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('

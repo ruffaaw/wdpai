@@ -7,7 +7,6 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-
     function hash_password($password): string
     {
         $options = [
