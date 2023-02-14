@@ -7,15 +7,16 @@ $path = parse_url( $path, PHP_URL_PATH);
 
 Routing::get('', 'DefaultController');
 Routing::get('projects', 'ProjectController');
-Routing::get('homepage', 'DefaultController');
+Routing::get('products', 'ProductController');
 Routing::get('profile', 'DefaultController');
 Routing::get('product', 'DefaultController');
-//Routing::get('search', 'DefaultController');
-Routing::get('searchDesktops', 'DefaultController');
-Routing::get('searchLaptops', 'DefaultController');
-Routing::get('searchSmartphones', 'DefaultController');
-Routing::get('searchTvs', 'DefaultController');
 Routing::get('shoppingCart', 'DefaultController');
+
+//Routing::get('search', 'DefaultController');
+Routing::get('productsDesktops', 'ProductController');
+Routing::get('productsLaptops', 'ProductController');
+Routing::get('productsSmartphones', 'ProductController');
+Routing::get('productsTvs', 'ProductController');
 
 Routing::post('register', 'RegisterController');
 
