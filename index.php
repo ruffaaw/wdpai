@@ -16,7 +16,8 @@ Routing::get('searchLaptops', 'DefaultController');
 Routing::get('searchSmartphones', 'DefaultController');
 Routing::get('searchTvs', 'DefaultController');
 Routing::get('shoppingCart', 'DefaultController');
-Routing::post('register', 'SecurityController');
+
+Routing::post('register', 'RegisterController');
 
 Routing::post('login', 'SecurityController');
 

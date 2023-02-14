@@ -99,66 +99,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="product1">
-                    <img src="public/img/uploads/Zrzut ekranu 2023-02-08 092243.png">
-                    <div>
-                        <h1>Title</h1>
-                        <p>Price</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
             </section>
         </main>
     </div>
