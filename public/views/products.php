@@ -21,7 +21,7 @@
                     <img src="public/uploads/<?= $product-> getImage(); ?>">
                     <div>
                         <h1><?= $product-> getName(); ?></h1>
-                        <p><?= $product-> getPrice(); ?></p>
+                        <p><?= $product-> getPrice(); ?> zl</p>
                         <div class="add-to-cart">
                             <a href="#"  class="button">Add to cart</a>
                         </div>
