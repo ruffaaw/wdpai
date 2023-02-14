@@ -116,3 +116,24 @@ nav>div>a{
     margin: 0 0 0 1em;
     height: 45%;
 }
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+div> form> button {
+    width: 43%;
+    height: 10%;
+    background: #E6000C;
+    font-size: 1.0em;
+    color: #fcfcfc;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 0 2em 4em;
+    justify-content: center;
+    font-family: Segoe UI;
+}
