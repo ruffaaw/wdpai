@@ -51,6 +51,7 @@
 
             </header>
             <section class="projects">
+                <?php foreach($projects as $project):?>
                 <div id="project-1">
                     <img src="public/uploads/<?= $project->getImage() ?>">
                     <div>
@@ -62,6 +63,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endforeach;?>
             </section>
         </main>
     </div>

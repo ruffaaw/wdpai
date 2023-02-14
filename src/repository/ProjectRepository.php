@@ -47,4 +47,25 @@ class ProjectRepository extends Repository
             $project->getImage()
         ]);
     }
+
+    public function getProjects(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM projects;
+        ');
+        $stmt->execute();
+        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($projects as $project) {
+            $result[] = new Project(
+                $project['title'],
+                $project['description'],
+                $project['image']
+            );
+        }
+
+        return $result;
+    }
 }
