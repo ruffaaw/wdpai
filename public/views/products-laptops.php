@@ -10,31 +10,8 @@
 <body>
     <div class="base-container">
         <nav>
-            <div>
-                <a href="homepage">
-                    <img src="public/img/name.svg">
-                </a>
-            </div>
-            <ul>
-                <i class="fa-solid fa-bars"></i>
-                <a class="text">Categories</a>
-                <li>
-                    <i class="fa-solid fa-computer"></i>
-                    <a href="productsDesktops" class="button">Desktops</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop"></i>
-                    <a href="searchLaptops" class="button">Laptops</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-mobile"></i>
-                    <a href="searchSmartphones" class="button">Smartphones</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-tv"></i>
-                    <a href="searchTvs" class="button">TVs</a>
-                </li>
-            </ul>
+            <?php require('public/views/common/logo.php'); ?>
+            <?php require('public/views/common/categories.php'); ?>
             <ul>
                 <i class="fa-solid fa-sort"></i>
                 <a class="text">Sort</a>
@@ -61,33 +38,7 @@
             </ul>
         </nav>
         <main>
-            <header>
-                <div class="delivery-information">
-                    <form>
-                        <i class="fa-solid fa-truck"></i>
-                        <span class="text">Free Delivery from 199zl!</span>
-                    </form>
-                </div>
-                <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="search...">
-                    </form>
-                </div>
-                <div class="shopping-cart">
-                    <a href="shoppingCart">
-                        <form>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </form>
-                    </a>
-                </div>
-                <div class="profile">
-                    <a href="profile">
-                        <form>
-                            <i class="fa-solid fa-user"></i>
-                        </form>
-                    </a>
-                </div>
-            </header>
+            <?php require('public/views/common/header-bar.php'); ?>
             <section class="products">
                 <?php foreach ($products as $product): ?>
                     <div id="product-1">

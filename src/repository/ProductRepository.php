@@ -17,6 +17,7 @@ class ProductRepository extends Repository
 
         foreach ($products as $product) {
             $result[] = new Product(
+                $product['id'],
                 $product['type'],
                 $product['name'],
                 $product['price'],
@@ -38,6 +39,7 @@ class ProductRepository extends Repository
 
         foreach ($products as $product) {
             $result[] = new Product(
+                $product['id'],
                 $product['type'],
                 $product['name'],
                 $product['price'],
@@ -59,6 +61,7 @@ class ProductRepository extends Repository
 
         foreach ($products as $product) {
             $result[] = new Product(
+                $product['id'],
                 $product['type'],
                 $product['name'],
                 $product['price'],
@@ -80,6 +83,7 @@ class ProductRepository extends Repository
 
         foreach ($products as $product) {
             $result[] = new Product(
+                $product['id'],
                 $product['type'],
                 $product['name'],
                 $product['price'],
@@ -101,6 +105,7 @@ class ProductRepository extends Repository
 
         foreach ($products as $product) {
             $result[] = new Product(
+                $product['id'],
                 $product['type'],
                 $product['name'],
                 $product['price'],

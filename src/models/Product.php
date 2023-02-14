@@ -2,56 +2,69 @@
 
 class Product
 {
+    private $id;
     private $type;
     private $name;
     private $price;
     private $image;
 
-    public function __construct($type, $name, $price, $image)
+    public function __construct($id, $type, $name, $price, $image)
     {
+        $this->id = $id;
         $this->type = $type;
         $this->name = $name;
         $this->price = $price;
         $this->image = $image;
     }
 
-    public function getType(): string
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getType()
     {
         return $this->type;
     }
 
-    public function setType(string $type): void
+    public function setType($type): void
     {
         $this->type = $type;
     }
 
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(string $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function getPrice(): string
+    public function getPrice()
     {
         return $this->price;
     }
 
-    public function setPrice(string $price): void
+    public function setPrice($price): void
     {
         $this->price = $price;
     }
 
-    public function getImage(): string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): void
+    public function setImage($image): void
     {
         $this->image = $image;
     }
+
 }

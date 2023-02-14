@@ -30,13 +30,12 @@ class ProductController extends AppController
     }
 
     public function productsSmartphones() {
-        $products = $this->productRepository->getProductsDesktops();
+        $products = $this->productRepository->getProductsSmartphones();
         $this->render('products-smartphones', ['products' => $products]);
     }
 
     public function productsTvs() {
-        $products = $this->productRepository->getProductsDesktops();
+        $products = $this->productRepository->getProductsTvs();
         $this->render('products-tvs', ['products' => $products]);
     }
-
 }
