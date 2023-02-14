@@ -6,8 +6,8 @@ function isEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
 
-function arePasswordsSame(password, confimedPassword) {
-    return password === confimedPassword;
+function arePasswordsSame(password, confirmedPassword) {
+    return password === confirmedPassword;
 }
 
 function markValidation(element, condition) {
@@ -16,23 +16,23 @@ function markValidation(element, condition) {
 
 function validateEmail() {
     setTimeout(function () {
-            markValidation(emailInput, isEmail(emailInput.value))
+            markValidation(emailInput, isEmail(emailInput.value));
         },
         1000
     );
 }
 
 function validatePassword() {
-    setTimeout(function (){
-        const condition = arePasswordsSame(
-            confirmedPasswordInput.previousElementSibling.value,
-            confirmedPasswordInput.value
-        );
-        markValidation(confirmedPasswordInputInput, condition)
+    setTimeout(function () {
+            const condition = arePasswordsSame(
+                confirmedPasswordInput.previousElementSibling.value,
+                confirmedPasswordInput.value
+            );
+            markValidation(confirmedPasswordInput, condition);
         },
         1000
-        );
+    );
 }
 
-emailInput.addEventListener('keyup',validateEmail);
+emailInput.addEventListener('keyup', validateEmail);
 confirmedPasswordInput.addEventListener('keyup', validatePassword);

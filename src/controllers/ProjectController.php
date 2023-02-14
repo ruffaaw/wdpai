@@ -1,12 +1,13 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/Project.php';
-require_once __DIR__.'/../repository/ProjectRepository.php';
+require_once __DIR__ . '/../models/Project.php';
+require_once __DIR__ . '/../repository/ProjectRepository.php';
 
-class ProjectController extends AppController {
+class ProjectController extends AppController
+{
 
-    const MAX_FILE_SIZE = 1024*1024;
+    const MAX_FILE_SIZE = 1024 * 1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
@@ -30,7 +31,7 @@ class ProjectController extends AppController {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
             move_uploaded_file(
                 $_FILES['file']['tmp_name'],
-                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+                dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
             // TODO create new project object and save it in database
@@ -38,12 +39,27 @@ class ProjectController extends AppController {
             $this->projectRepository->addProject($project);
 
             return $this->render('projects', [
-                'projects' => $this->projectRepository->getProjects(),
-                'messages' => $this->message
+                'messages' => $this->message,
+                'projects' => $this->projectRepository->getProjects()
             ]);
         }
 
-        return $this->render('add-projects', ['messages' => $this->message]);
+        return $this->render('add-project', ['messages' => $this->message]);
+    }
+
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->projectRepository->getProjectByTitle($decoded['search']));
+        }
     }
 
     private function validate(array $file): bool
