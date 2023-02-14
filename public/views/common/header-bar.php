@@ -1,16 +1,16 @@
 <header>
-    <div class="delivery-information">
+    <div class="delivery-information" id="truck-icon">
         <form>
             <i class="fa-solid fa-truck"></i>
             <span class="text">Free Delivery from 199zl!</span>
         </form>
     </div>
-    <div class="search-bar">
+    <div class="search-bar" >
         <form>
-            <input type="text" placeholder="search...">
+            <input placeholder="search...">
         </form>
     </div>
-    <div class="shopping-cart">
+    <div class="shopping-cart" >
         <a href="shoppingCart">
             <form>
                 <i class="fa-solid fa-cart-shopping"></i>

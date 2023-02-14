@@ -50,7 +50,7 @@ class SecurityController extends AppController
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/homepage");
+        header("Location: {$url}/products");
     }
 
 }

@@ -1,4 +1,3 @@
-
 <ul>
     <i class="fa-solid fa-bars"></i>
     <a class="text">Categories</a>

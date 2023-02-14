@@ -4,6 +4,11 @@
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">
     <link rel="stylesheet" type="text/css" href="public/css/search.css">
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/drive.js" defer></script>
+    <script type="text/javascript" src="./public/js/zooming.js" defer></script>
+
+    <script src="./public/js/sort.js"></script>
+
     <title>SEARCH</title>
 </head>
 
@@ -22,6 +27,7 @@
                         <option value="From most cheap">From the cheapest</option>
                         <option value="From most expensive">From the most expensive</option>
                     </select>
+
                 </li>
             </ul>
             <ul>
@@ -42,7 +48,7 @@
             <section class="products">
                 <?php foreach ($products as $product): ?>
                     <div id="product-1">
-                        <img src="public/uploads/<?= $product-> getImage(); ?>">
+                        <img src="public/uploads/<?= $product-> getImage(); ?>" onmouseover="zoomIn(event)">
                         <div>
                             <h1><?= $product-> getName(); ?></h1>
                             <p><?= $product-> getPrice(); ?> zl</p>

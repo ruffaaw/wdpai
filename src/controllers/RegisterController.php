@@ -67,6 +67,6 @@ class RegisterController extends AppController
 
         $userRepository->addUser($name, $surname, $email, $this->hash_password($password), $phone);
 
-        return $this->render('homepage');
+        return $this->render('products');
     }
 }

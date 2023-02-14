@@ -40,7 +40,7 @@
             <header>
                 <div class="delivery-information">
                     <form>
-                        <i class="fa-solid fa-truck"></i>
+                        <i class="fa-solid fa-truck" id="truck-icon"></i>
                         <span class="text">Free Delivery from 199zl!</span>
                     </form>
                 </div>

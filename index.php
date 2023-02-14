@@ -8,23 +8,16 @@ $path = parse_url( $path, PHP_URL_PATH);
 Routing::get('', 'DefaultController');
 Routing::get('projects', 'ProjectController');
 Routing::get('products', 'ProductController');
-Routing::get('profile', 'DefaultController');
-Routing::get('product', 'DefaultController');
-Routing::get('shoppingCart', 'DefaultController');
-
-//Routing::get('search', 'DefaultController');
-Routing::get('productsDesktops', 'ProductController');
-Routing::get('productsLaptops', 'ProductController');
-Routing::get('productsSmartphones', 'ProductController');
-Routing::get('productsTvs', 'ProductController');
-
+Routing::post('productsDesktops', 'ProductController');
+Routing::post('productsLaptops', 'ProductController');
+Routing::post('productsSmartphones', 'ProductController');
+Routing::post('productsTvs', 'ProductController');
+Routing::post('search', 'ProductController');
 Routing::post('register', 'RegisterController');
-
 Routing::post('login', 'SecurityController');
-
 Routing::post('addProject', 'ProjectController');
-Routing::post('search','ProjectController');
-
+Routing::post('searchProjects','ProjectController');
+Routing::get('shopping-cart','DefaultController');
 
 Routing::run($path);
 

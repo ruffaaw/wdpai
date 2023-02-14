@@ -1,7 +1,7 @@
-const search = document.querySelector('input[placeholder="search project"]');
-const projectContainer = document.querySelector(".projects");
+const searchProducts = document.querySelector('input[placeholder="search..."]');
+const productContainer = document.querySelector(".products");
 
-search.addEventListener("keyup", function (event) {
+searchProducts.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
 
@@ -13,38 +13,35 @@ search.addEventListener("keyup", function (event) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        }).then(function (response) {
+        }).then(function(response) {
             return response.json();
-        }).then(function (projects) {
-            projectContainer.innerHTML = "";
-            loadProjects(projects)
+        }).then(function(products){
+           productContainer.innerHTML = "";
+            loadProducts(products)
         });
     }
 });
 
-function loadProjects(projects) {
-    projects.forEach(project => {
-        console.log(project);
-        createProject(project);
+function loadProducts(products) {
+    products.forEach(product => {
+        console.log(product);
+        createProduct(product);
     });
 }
 
-function createProject(project) {
-    const template = document.querySelector("#project-template");
+function createProduct(product) {
+    const template = document.querySelector("#product-template");
 
     const clone = template.content.cloneNode(true);
     const div = clone.querySelector("div");
-    div.id = project.id;
+    div.id = product.id;
     const image = clone.querySelector("img");
-    image.src = `/public/uploads/${project.image}`;
-    const title = clone.querySelector("h2");
-    title.innerHTML = project.title;
-    const description = clone.querySelector("p");
-    description.innerHTML = project.description;
-    const like = clone.querySelector(".fa-heart");
-    like.innerText = project.like;
-    const dislike = clone.querySelector(".fa-minus-square");
-    dislike.innerText = project.dislike;
+    image.src = `/public/upload/${product.image}`;
+    const name = clone.querySelector("h1");
+    name.innerHTML = product.name;
+    const price = clone.querySelector("p");
+    price.innerHTML = product.price;
 
-    projectContainer.appendChild(clone);
+
+    productContainer.appendChild(clone);
 }
