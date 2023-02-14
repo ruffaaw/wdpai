@@ -19,23 +19,23 @@ class ProductController extends AppController
         $this->render('products', ['products' => $products]);
     }
 
-    public function productsLaptops() {
-        $products = $this->productRepository->getProductsLaptops();
-        $this->render('products-laptops', ['products' => $products]);
-    }
-
     public function productsDesktops() {
         $products = $this->productRepository->getProductsDesktops();
-        $this->render('products-desktops', ['products' => $products]);
+        $this->render('products-search', ['products' => $products]);
+    }
+
+    public function productsLaptops() {
+        $products = $this->productRepository->getProductsLaptops();
+        $this->render('products-search', ['products' => $products]);
     }
 
     public function productsSmartphones() {
         $products = $this->productRepository->getProductsSmartphones();
-        $this->render('products-smartphones', ['products' => $products]);
+        $this->render('products-search', ['products' => $products]);
     }
 
     public function productsTvs() {
         $products = $this->productRepository->getProductsTvs();
-        $this->render('products-tvs', ['products' => $products]);
+        $this->render('products-search', ['products' => $products]);
     }
 }
