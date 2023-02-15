@@ -7,29 +7,16 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-    function hash_password($password): string
-    {
-        $options = [
-            'cost' => 12,
-        ];
-        return password_hash($password, PASSWORD_BCRYPT, $options);
-    }
-
-    function verify_password($password, $hashed_password): bool
-    {
-        if (password_verify($password, $hashed_password)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function login()
     {
         $userRepository = new UserRepository();
 
         if(!$this->isPost()) {
             return $this->render('login');
+        }
+
+        if(isset($_POST['register'])) {
+            return $this->render('register');
         }
 
         $email = $_POST["email"];
@@ -45,7 +32,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if (!$this->verify_password($password, $user->getPassword())) {
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ["Wrong password"]]);
         }
 
@@ -53,4 +40,10 @@ class SecurityController extends AppController
         header("Location: {$url}/products");
     }
 
+    public function redirectToRegister(){
+        if(isset($_POST['register'])) {
+            return $this->render('register');
+        }
+        $this->login();
+    }
 }

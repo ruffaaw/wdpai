@@ -9,9 +9,9 @@
 <body>
 <div class="container">
     <div class="logo">
-        <img src="public/img/logo.svg">
+        <img src="public/img/logo.svg" height=400px>
     </div>
-    <div class="login-container">
+    <div class="register-container">
         <form class="register" action="register" method="POST">
             <div class="messages">
                 <?php

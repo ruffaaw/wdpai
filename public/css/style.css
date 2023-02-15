@@ -19,7 +19,7 @@ body{
     text-align: center;
 }
 
-.login-container{
+.login-container, .register-container{
     width: 50%;
 }
 
@@ -156,4 +156,21 @@ form.register {
     background: #FCFCFC;
     color: #E6000C;
     margin: 0 0 2em 1em;
+}
+
+.messages{
+    color: white;
+    font-size: 14px;
+    margin-top: 3px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 19em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 50%;
 }

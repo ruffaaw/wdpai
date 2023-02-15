@@ -6,15 +6,6 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class RegisterController extends AppController
 {
-
-    function hash_password($password): string
-    {
-        $options = [
-            'cost' => 12,
-        ];
-        return password_hash($password, PASSWORD_BCRYPT, $options);
-    }
-
     public function register() {
         if (!$this->isPost()) {
             return $this->render('register');
@@ -65,7 +56,7 @@ class RegisterController extends AppController
 
         $userRepository = new UserRepository();
 
-        $userRepository->addUser($name, $surname, $email, $this->hash_password($password), $phone);
+        $userRepository->addUser($name, $surname, $email, $this->password_hash($password, PASSWORD_BCRYPT, 12));
 
         return $this->render('products');
     }
