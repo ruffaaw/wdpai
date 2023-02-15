@@ -56,8 +56,8 @@ class RegisterController extends AppController
 
         $userRepository = new UserRepository();
 
-        $userRepository->addUser($name, $surname, $email, $this->password_hash($password, PASSWORD_BCRYPT, 12));
+        $userRepository->addUser($name, $surname, $email,password_hash($password, PASSWORD_BCRYPT, $options=['cost' => 12]),$phone);
 
-        return $this->render('products');
+        return $this->render('login', ['messages' => ['Account created!']]);
     }
 }
