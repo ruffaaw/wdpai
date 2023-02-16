@@ -1,13 +1,13 @@
 <header>
-    <div class="delivery-information" id="truck-icon">
-        <form>
+    <div class="delivery-information">
+        <form id="truck-icon">
             <i class="fa-solid fa-truck"></i>
             <span class="text">Free Delivery from 199zl!</span>
         </form>
     </div>
     <div class="search-bar" >
         <form>
-            <input placeholder="search...">
+            <input id="search-input" type="text" placeholder="search...">
         </form>
     </div>
     <div class="shopping-cart" >
@@ -18,10 +18,13 @@
         </a>
     </div>
     <div class="profile">
-        <a href="profile">
+        <a href="#" id="profile-btn">
             <form>
                 <i class="fa-solid fa-user"></i>
             </form>
         </a>
+        <div class="profile-panel">
+            <button id="logout-btn">Wyloguj</button>
+        </div>
     </div>
 </header>

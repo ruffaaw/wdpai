@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="./public/js/register.js" defer></script>
+
+
     <title>REGISTER</title>
 </head>
 
@@ -28,7 +31,7 @@
             <input name="name" type="text" placeholder="name">
             <input name="surname" type="text" placeholder="surname">
             <input name="phone" type="text" placeholder="phone">
-            <button type="submit">REGISTER</button>
+            <button class="register-button" name="register" type="submit">REGISTER</button>
         </form>
     </div>
 </div>

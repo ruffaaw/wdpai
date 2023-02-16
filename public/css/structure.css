@@ -82,7 +82,7 @@ header {
 }
 
 .search-bar {
-    width: 28vh;
+    width: 400px;
     margin: 0 2em;
 }
 
@@ -91,7 +91,7 @@ header {
 }
 
 .search-bar>form>input {
-    width: 73%;
+    width: 50%;
     justify-content: right;
 }
 
@@ -108,7 +108,7 @@ header {
     justify-content: right;
     color:#000000;
     font-size: 1em;
-    margin-right: 30em;
+    margin-right: 20em;
 }
 
 .delivery-information>form>i>br {

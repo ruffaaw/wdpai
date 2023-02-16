@@ -13,7 +13,7 @@ Routing::post('productsSmartphones', 'ProductController');
 Routing::post('productsTvs', 'ProductController');
 Routing::post('search', 'ProductController');
 Routing::post('register', 'RegisterController');
-Routing::post('redirectToRegister', 'SecurityController');
+Routing::post('loginButtons', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('addProject', 'ProjectController');
 Routing::post('searchProjects','ProjectController');

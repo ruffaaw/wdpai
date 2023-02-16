@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/login.js" defer></script>
 
     <title> LOGIN PAGE</title>
 </head>
@@ -10,7 +11,7 @@
             <img src="public/img/logo.svg" height=400px>
         </div>
         <div class ="login-container">
-            <form class="login" action="login" method="POST">
+            <form class="login" action="loginButtons" method="POST">
                 <input name="email" type="text" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <div class="messages">

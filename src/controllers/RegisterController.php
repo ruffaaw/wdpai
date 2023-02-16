@@ -17,33 +17,33 @@ class RegisterController extends AppController
         $password = $_POST['password'];
         $phone = $_POST['phone'];
 
-        if (empty($name)) {
-            return $this->render('register', ['messages' => ['Nie wpisano imiona']]);
-        } else {
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-                return $this->render('register', ['messages' => ['Niepoprawny format imienia']]);
-            }
-        }
-
-        if (empty($surname)) {
-            return $this->render('register', ['messages' => ['Nie wpisano nazwiska']]);
-        } else {
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-                return $this->render('register', ['messages' => ['Niepoprawny format nazwiska']]);
-            }
-        }
-
         if (empty($email)) {
-            return $this->render('register', ['messages' => ['Nie wpisano loginu']]);
+            return $this->render('register', ['messages' => ['No email entered']]);
         } else {
             $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";
             if (!preg_match ($pattern, $email) ) {
-                return $this->render('register', ['messages' => ['NIepoprawny format emaila']]);
+                return $this->render('register', ['messages' => ['Wrong email format']]);
             }
         }
 
         if (empty($password)) {
-            return $this->render('register', ['messages' => ['Nie wpisano hasla']]);
+            return $this->render('register', ['messages' => ['No password entered']]);
+        }
+
+        if (empty($name)) {
+            return $this->render('register', ['messages' => ['No name entered']]);
+        } else {
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+                return $this->render('register', ['messages' => ['Wrong name format']]);
+            }
+        }
+
+        if (empty($surname)) {
+            return $this->render('register', ['messages' => ['No surname entered']]);
+        } else {
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+                return $this->render('register', ['messages' => ['Wrong surname format']]);
+            }
         }
 
         if(empty($phone)) {

@@ -11,14 +11,6 @@ class SecurityController extends AppController
     {
         $userRepository = new UserRepository();
 
-        if(!$this->isPost()) {
-            return $this->render('login');
-        }
-
-        if(isset($_POST['register'])) {
-            return $this->render('register');
-        }
-
         $email = $_POST["email"];
         $password = $_POST["password"];
 
@@ -40,10 +32,15 @@ class SecurityController extends AppController
         header("Location: {$url}/products");
     }
 
-    public function redirectToRegister(){
+    public function loginButtons(){
+        if(!$this->isPost()) {
+            return $this->render('login');
+        }
+
         if(isset($_POST['register'])) {
             return $this->render('register');
         }
-        $this->login();
+
+        return $this->login();
     }
 }

@@ -5,9 +5,11 @@
     <link rel="stylesheet" type="text/css" href="public/css/homepage.css">
 
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/drive.js" defer></script>
     <script type="text/javascript" src="./public/js/zooming.js" defer></script>
+    <script type="text/javascript" src="./public/js/logout.js"></script>
     <title> HOMEPAGE</title>
 </head>
 

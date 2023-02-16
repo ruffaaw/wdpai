@@ -13,10 +13,10 @@ searchProducts.addEventListener("keyup", function (event) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        }).then(function(response) {
-            return response.json();
-        }).then(function(products){
-           productContainer.innerHTML = "";
+        }).then(function (response) {
+            return response.json()
+        }).then(function (products) {
+            productContainer.innerHTML = "";
             loadProducts(products)
         });
     }
@@ -31,7 +31,7 @@ function loadProducts(products) {
 
 function createProduct(product) {
     const template = document.querySelector("#product-template");
-
+    console.log("cos tam cos tam");
     const clone = template.content.cloneNode(true);
     const div = clone.querySelector("div");
     div.id = product.id;

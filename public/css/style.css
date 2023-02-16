@@ -174,3 +174,20 @@ form.register {
     margin-top: 20px;
     width: 50%;
 }
+
+.profile-panel {
+    display: none;
+}
+.profile-panel.show {
+    display: block;
+}
+
+.register-button {
+    background: #FCFCFC;
+    border-radius: 30px;
+    width: 45%;
+    border: none;
+    color: #E6000C;
+    margin: 1em;
+    line-height: 2.5em;
+}
