@@ -18,6 +18,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('addProject', 'ProjectController');
 Routing::post('searchProjects','ProjectController');
 Routing::get('shopping-cart','DefaultController');
+Routing::post('sort','ProductController');
 
 Routing::run($path);
 

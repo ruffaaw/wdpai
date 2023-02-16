@@ -14,28 +14,72 @@ class ProductController extends AppController
         $this->productRepository = new ProductRepository;
     }
 
-    public function products() {
+    public function products()
+    {
         $products = $this->productRepository->getProducts();
         $this->render('products', ['products' => $products]);
     }
 
-    public function productsDesktops() {
+    public function productsDesktops()
+    {
         $products = $this->productRepository->getProductsDesktops();
         $this->render('products-search', ['products' => $products]);
     }
 
-    public function productsLaptops() {
+    public function productsLaptops()
+    {
         $products = $this->productRepository->getProductsLaptops();
         $this->render('products-search', ['products' => $products]);
     }
 
-    public function productsSmartphones() {
+    public function productsSmartphones()
+    {
         $products = $this->productRepository->getProductsSmartphones();
         $this->render('products-search', ['products' => $products]);
     }
 
-    public function productsTvs() {
+    public function productsTvs()
+    {
         $products = $this->productRepository->getProductsTvs();
+        $this->render('products-search', ['products' => $products]);
+    }
+
+    public function sort()
+    {
+        $selectOption = $_POST['sort-option'];
+        $url = basename(parse_url($_SERVER['HTTP_REFERER'],PHP_URL_PATH));
+
+        $type = 0;
+
+        switch($url) {
+            case 'productsDesktops':
+                $type = 1;
+                break;
+            case 'productsLaptops':
+                $type = 2;
+                break;
+            case 'productsSmartphones':
+                $type = 3;
+                break;
+            case 'productsTvs':
+                $type = 4;
+                break;
+    }
+
+        switch($selectOption) {
+            case 'A-Z':
+                $products = $this->productRepository->getProductsSort($type,' name asc');
+                break;
+            case 'Z-A':
+                $products = $this->productRepository->getProductsSort($type,' name desc');
+                break;
+            case 'From most cheap':
+                $products = $this->productRepository->getProductsSort($type,' price asc');
+                break;
+            case 'From most expensive':
+                $products = $this->productRepository->getProductsSort($type,' price desc');
+                break;
+        }
         $this->render('products-search', ['products' => $products]);
     }
 

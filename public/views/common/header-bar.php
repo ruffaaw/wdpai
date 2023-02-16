@@ -2,7 +2,7 @@
     <div class="delivery-information">
         <form id="truck-icon">
             <i class="fa-solid fa-truck"></i>
-            <span class="text">Free Delivery from 199zl!</span>
+            <span class="text">Free Delivery from 199 PLN!</span>
         </form>
     </div>
     <div class="search-bar" >

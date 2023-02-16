@@ -27,7 +27,7 @@
                     <img src="public/uploads/<?= $product-> getImage(); ?>"onmouseover="zoomIn(event)">
                     <div>
                         <h1><?= $product-> getName(); ?></h1>
-                        <p><?= $product-> getPrice(); ?> zl</p>
+                        <p><?= $product-> getPrice(); ?> PLN</p>
                         <div class="add-to-cart">
                             <a href="#"  class="button">Add to cart</a>
                         </div>

@@ -191,3 +191,9 @@ form.register {
     margin: 1em;
     line-height: 2.5em;
 }
+
+.sort-button {
+    background: #FCFCFC;
+    color: #000000;
+    margin: 0 0 2em 6.5em;
+}

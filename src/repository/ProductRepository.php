@@ -115,6 +115,26 @@ class ProductRepository extends Repository
         return $result;
     }
 
+    public function getProductsSort(int $type, string $sort)
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('SELECT * FROM public.products WHERE type =' . (int)$type . ' ORDER BY ' . $sort);
+        $stmt->execute();
+
+        $products = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        foreach ($products as $product) {
+            $result[] = new Product(
+                $product['id'],
+                $product['type'],
+                $product['name'],
+                $product['price'],
+                $product['image']
+            );
+        }
+        return $result;
+    }
+
     public function getProductbyName(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
