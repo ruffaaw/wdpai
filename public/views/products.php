@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php require('public/views/common/sessionValidation.php') ?>
+
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">
@@ -6,7 +9,7 @@
 
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/search.js"></script>
     <script type="text/javascript" src="./public/js/drive.js" defer></script>
     <script type="text/javascript" src="./public/js/zooming.js" defer></script>
     <script type="text/javascript" src="./public/js/logout.js"></script>

@@ -17,14 +17,11 @@
             </form>
         </a>
     </div>
-    <div class="profile">
-        <a href="#" id="profile-btn">
+    <div class="logout">
+        <a href="logout" id="logoutButton">
             <form>
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
             </form>
         </a>
-        <div class="profile-panel">
-            <button id="logout-btn">Wyloguj</button>
-        </div>
     </div>
 </header>

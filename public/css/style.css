@@ -197,3 +197,9 @@ form.register {
     color: #000000;
     margin: 0 0 2em 6.5em;
 }
+
+.logout>a>form>i {
+    font-size: 1em;
+    color: #000000;
+    margin: 0;
+}

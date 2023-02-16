@@ -1,47 +1,11 @@
-const searchProducts = document.querySelector('input[placeholder="search..."]');
-const productContainer = document.querySelector(".products");
+// Pobieramy element input z wyszukiwarką
+const searchInput = document.getElementById("search-input");
 
-searchProducts.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-
-        const data = {search: this.value};
-
-        fetch("/search", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(function (response) {
-            return response.json()
-        }).then(function (products) {
-            productContainer.innerHTML = "";
-            loadProducts(products)
-        });
+// Dodajemy event listener na zdarzenie "keydown" (wciskanie klawisza)
+searchInput.addEventListener("keydown", function(event) {
+    // Sprawdzamy, czy użytkownik nacisnął klawisz "Enter" (kod klawisza 13)
+    if (event.keyCode === 13) {
+        event.preventDefault(); // Zapobiegamy przeładowaniu strony (domyślna akcja)
+        searchProducts(); // Wywołujemy funkcję wyszukiwania
     }
 });
-
-function loadProducts(products) {
-    products.forEach(product => {
-        console.log(product);
-        createProduct(product);
-    });
-}
-
-function createProduct(product) {
-    const template = document.querySelector("#product-template");
-    console.log("cos tam cos tam");
-    const clone = template.content.cloneNode(true);
-    const div = clone.querySelector("div");
-    div.id = product.id;
-    const image = clone.querySelector("img");
-    image.src = `/public/upload/${product.image}`;
-    const name = clone.querySelector("h1");
-    name.innerHTML = product.name;
-    const price = clone.querySelector("p");
-    price.innerHTML = product.price;
-
-
-    productContainer.appendChild(clone);
-}

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+<?php require('public/views/common/sessionValidation.php') ?>
+
+
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">

@@ -2,6 +2,8 @@
 
 require 'Routing.php';
 
+session_start();
+
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url( $path, PHP_URL_PATH);
 
@@ -19,6 +21,7 @@ Routing::post('addProject', 'ProjectController');
 Routing::post('searchProjects','ProjectController');
 Routing::get('shopping-cart','DefaultController');
 Routing::post('sort','ProductController');
+Routing::post('logout', 'SecurityController');
 
 Routing::run($path);
 

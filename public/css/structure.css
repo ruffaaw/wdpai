@@ -71,7 +71,7 @@ header {
     padding: 1em 2em;
 }
 
-.shopping-cart>a>form>i, .profile>a>form>i {
+.shopping-cart>a>form>i, .logout>a>form>i {
     font-size: 1em;
     color:#000000;
     margin: 0;
