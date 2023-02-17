@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="./public/js/search.js" defer></script>
-    <script type="text/javascript" src="./public/js/drive.js" defer></script>
+    <script type="text/javascript" src="./public/js/truck.js" defer></script>
     <script type="text/javascript" src="./public/js/zooming.js" defer></script>
     <title> HOMEPAGE</title>
 </head>
@@ -32,7 +32,7 @@
                         <p><?= $product-> getPrice(); ?> PLN</p>
                         <form class="cartButton" action="addToCart" method="POST">
                             <input type="hidden" name="id" value="<?php echo $product->getId() ?>">
-                            <button type="submit" class="button" onclick="goBack() id="cartButton">Add to cart</button>
+                            <button type="submit" class="button" id="cartButton">Add to cart</button>
                         </form>
                     </div>
                 </div>
@@ -48,9 +48,10 @@
         <div>
             <h1>Name</h1>
             <p>Price PLN</p>
-            <div class="add-to-cart">
-                <a href="#"  class="button">Add to cart</a>
-            </div>
+            <form class="cartButton" action="addToCart" method="POST">
+                <input type="hidden" name="id" value="id">
+                <button type="submit" class="button" id="cartButton">Add to cart</button>
+            </form>
         </div>
     </div>
 </template>

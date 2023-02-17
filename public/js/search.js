@@ -10,43 +10,49 @@ search.addEventListener("keyup", function (event) {
         fetch("/search", {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(data)
-        }).then(function(response) {
-            return response.json();
-        }).then(function(products) {
-            productContainer.innerHTML = "";
-            loadProducts(products)
-        }).catch(function(error) {
-            console.error('Error:', error);
-            console.log('Response:', error.response);
-
-        });
-
+            body: JSON.stringify(data),
+        })
+            .then(function (response) {
+                console.log(response);
+                return response.text();
+            })
+            .then(function (responseText) {
+                console.log(responseText);
+                const products = JSON.parse(responseText);
+                productContainer.innerHTML = "";
+                loadProducts(products);
+            })
+            .catch(function (error) {
+                console.error("Error:", error);
+                console.log("Response:", error.response);
+            });
     }
 });
 
-function loadProducts(products) {
-    products.forEach(product => {
-        console.log(product);
-        createProduct(product);
-    });
-}
+    function loadProducts(products) {
+        products.forEach(product => {
+            console.log(product);
+            createProduct(product);
+        });
+    }
 
-function createProduct(product) {
-    const template = document.querySelector("#product-template");
+    function createProduct(product) {
+        const template = document.querySelector("#product-template");
 
-    const clone = template.content.cloneNode(true);
+        const clone = template.content.cloneNode(true);
 
-    const image = clone.querySelector("img");
-    image.src = `/public/uploads/${product.image}`;
-    const title = clone.querySelector("h1");
-    title.innerHTML = product.title;
-    const price = clone.querySelector("p");
-    price.innerHTML = product.price;
-    const button = clone.querySelector("a");
-    button.innerText = product.button;
+        const image = clone.querySelector("img");
+        image.src = `/public/uploads/${product.image}`;
+        const name = clone.querySelector("h1");
+        name.innerHTML = product.name;
+        const price = clone.querySelector("p");
+        price.innerHTML = product.price;
+        const hidden = clone.querySelector("input");
+        hidden.innerHTML = product.hidden;
+        const button = clone.querySelector("button");
+        button.innerText = product.button;
 
-    productContainer.appendChild(clone);
+        productContainer.appendChild(clone);
 }

@@ -142,7 +142,7 @@ class ProductRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM products WHERE LOWER(name) LIKE :searchProducts
         ');
-        $stmt->bindParam('"searchProducts', $searchString, PDO::PARAM_STR);
+        $stmt->bindParam(':searchProducts', $searchString, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

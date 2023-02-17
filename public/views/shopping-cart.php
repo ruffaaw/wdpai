@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">
     <link rel="stylesheet" type="text/css" href="public/css/shoppingCart.css">
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./public/js/drive.js" defer></script>
+    <script type="text/javascript" src="./public/js/truck.js" defer></script>
 
     <title> SHOPPING CART</title>
 </head>

@@ -6,14 +6,10 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/structure.css">
     <link rel="stylesheet" type="text/css" href="public/css/search.css">
-
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="./public/js/drive.js" defer></script>
+    <script type="text/javascript" src="./public/js/truck.js" defer></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/zooming.js" defer></script>
-
-    <script src="./public/js/sort.js"></script>
-
     <title>SEARCH</title>
 </head>
 

@@ -48,3 +48,11 @@ main>span {
     height: 392px;
 }
 
+@media only screen and (max-device-width:420px){
+    .search-bar {
+        display: none;
+    }
+
+
+
+}
