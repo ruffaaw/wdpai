@@ -1,12 +1,13 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/User.php';
-require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
 
 class RegisterController extends AppController
 {
-    public function register() {
+    public function register()
+    {
         if (!$this->isPost()) {
             return $this->render('register');
         }
@@ -21,7 +22,7 @@ class RegisterController extends AppController
             return $this->render('register', ['messages' => ['No email entered']]);
         } else {
             $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";
-            if (!preg_match ($pattern, $email) ) {
+            if (!preg_match($pattern, $email)) {
                 return $this->render('register', ['messages' => ['Wrong email format']]);
             }
         }
@@ -33,7 +34,7 @@ class RegisterController extends AppController
         if (empty($name)) {
             return $this->render('register', ['messages' => ['No name entered']]);
         } else {
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
                 return $this->render('register', ['messages' => ['Wrong name format']]);
             }
         }
@@ -41,22 +42,22 @@ class RegisterController extends AppController
         if (empty($surname)) {
             return $this->render('register', ['messages' => ['No surname entered']]);
         } else {
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
                 return $this->render('register', ['messages' => ['Wrong surname format']]);
             }
         }
 
-        if(empty($phone)) {
+        if (empty($phone)) {
             return $this->render('register', ['messages' => ['Not entered number phone']]);
-        } else{
-            if(!preg_match("/^[0-9]*$/",$phone)) {
+        } else {
+            if (!preg_match("/^[0-9]*$/", $phone)) {
                 return $this->render('register', ['messages' => ['Invalid phone number format']]);
             }
         }
 
         $userRepository = new UserRepository();
 
-        $userRepository->addUser($name, $surname, $email,password_hash($password, PASSWORD_BCRYPT, $options=['cost' => 12]),$phone);
+        $userRepository->addUser($name, $surname, $email, password_hash($password, PASSWORD_BCRYPT, $options = ['cost' => 12]), $phone);
 
         return $this->render('login', ['messages' => ['Account created!']]);
     }

@@ -47,11 +47,11 @@ class ProductController extends AppController
     public function sort()
     {
         $selectOption = $_POST['sort-option'];
-        $url = basename(parse_url($_SERVER['HTTP_REFERER'],PHP_URL_PATH));
+        $url = basename(parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH));
 
         $type = 0;
 
-        switch($url) {
+        switch ($url) {
             case 'productsDesktops':
                 $type = 1;
                 break;
@@ -64,20 +64,20 @@ class ProductController extends AppController
             case 'productsTvs':
                 $type = 4;
                 break;
-    }
+        }
 
-        switch($selectOption) {
+        switch ($selectOption) {
             case 'A-Z':
-                $products = $this->productRepository->getProductsSort($type,' name asc');
+                $products = $this->productRepository->getProductsSort($type, ' name asc');
                 break;
             case 'Z-A':
-                $products = $this->productRepository->getProductsSort($type,' name desc');
+                $products = $this->productRepository->getProductsSort($type, ' name desc');
                 break;
             case 'From most cheap':
-                $products = $this->productRepository->getProductsSort($type,' price asc');
+                $products = $this->productRepository->getProductsSort($type, ' price asc');
                 break;
             case 'From most expensive':
-                $products = $this->productRepository->getProductsSort($type,' price desc');
+                $products = $this->productRepository->getProductsSort($type, ' price desc');
                 break;
         }
         $this->render('products-search', ['products' => $products]);
@@ -87,13 +87,13 @@ class ProductController extends AppController
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
-        if($contentType === "application/json") {
+        if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
 
             header('Content-type: application/json');
             http_response_code(200);
-            
+
             echo json_encode($this->productRepository->getProductbyName($decoded['search']));
         }
     }

@@ -10,7 +10,7 @@ class CartRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             INSERT INTO cart (id_user, id_product) VALUES (?, ?)
         ');
-        $stmt->execute([$id_user,$id_product]);
+        $stmt->execute([$id_user, $id_product]);
     }
 
     public function getCart()
@@ -21,7 +21,7 @@ class CartRepository extends Repository
             FROM cart JOIN products ON cart.id_product = products.id
             WHERE cart.id_user = :userID
         ');
-        $stmt->bindParam(':userID',$_SESSION['user_id'] , PDO::PARAM_STR);
+        $stmt->bindParam(':userID', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

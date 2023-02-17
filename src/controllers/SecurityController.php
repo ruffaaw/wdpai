@@ -1,8 +1,8 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/User.php';
-require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
 
 
 class SecurityController extends AppController
@@ -16,7 +16,7 @@ class SecurityController extends AppController
 
         $user = $userRepository->getUser($email);
 
-        if(!$user) {
+        if (!$user) {
             $this->render('login', ['messages' => ['User not exist!']]);
         }
 
@@ -35,12 +35,13 @@ class SecurityController extends AppController
         header("Location: {$url}/products");
     }
 
-    public function loginButtons(){
-        if(!$this->isPost()) {
+    public function loginButtons()
+    {
+        if (!$this->isPost()) {
             return $this->render('login');
         }
 
-        if(isset($_POST['register'])) {
+        if (isset($_POST['register'])) {
             return $this->render('register');
         }
 

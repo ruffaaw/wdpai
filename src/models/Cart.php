@@ -17,7 +17,7 @@ class Cart
         return $this->id_user;
     }
 
-    public function setIdUser( string $id_user): void
+    public function setIdUser(string $id_user): void
     {
         $this->id_user = $id_user;
     }

@@ -18,7 +18,7 @@ class CartController extends AppController
         $id_user = $_SESSION['user_id'];
         $id_product = $_POST['id'];
 
-        $this->cartRepository->insertIntoCart($id_user,$id_product);
+        $this->cartRepository->insertIntoCart($id_user, $id_product);
         $cart = $this->cartRepository->getCart();
         $this->render('shopping-cart', ['cart' => $cart]);
     }
