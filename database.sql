@@ -12,7 +12,7 @@
  Target Server Version : 150002 (150002)
  File Encoding         : 65001
 
- Date: 17/02/2023 13:07:11
+ Date: 17/02/2023 14:56:42
 */
 
 
@@ -109,20 +109,35 @@ CREATE TABLE "public"."users" (
   "password" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "name" varchar(100) COLLATE "pg_catalog"."default" NOT NULL,
   "surname" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "phone" int4 NOT NULL
+  "phone" int4 NOT NULL,
+  "role" int4 NOT NULL DEFAULT 2,
+  "date_add" timestamp(6)
 )
 ;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO "public"."users" VALUES (2, 'jsnow@pk.edu.pl', '$2y$12$zAGRkKNyCp1WQnXGSbVsXe7XaL75OQqUIbH6dk1DHATprH44HKp2G', 'John', 'Snow', 123123123);
-INSERT INTO "public"."users" VALUES (3, 'grabikwiktoria60@gmail.com', '$2y$12$V2bQfBdwuhTLalEyLI1ZJOXLs3QLWCuqZQ8AGpKwc7YTzFVMNHwyK', 'Wiktoria', 'Grabik', 12312343);
-INSERT INTO "public"."users" VALUES (4, 'maciek1234@gmail.com', '$2y$12$lGGn.DX3P0Jgugt6wFrUBuQrzAMp/5IkQqIqkA8sppGtTh3xnLw3m', 'Maciej', 'Nowak', 1234562354);
-INSERT INTO "public"."users" VALUES (5, 'dabba9@gmail.com', '$2y$12$kWX0tbe9i.QZ8xJlvHU32u4gi.s9OM2jsL6GgIk4/5ggR3gxG2MKm', 'Damian', 'Bartłomiejski', 123455345);
-INSERT INTO "public"."users" VALUES (1, 'ruffaaw@gmail.com', '$2y$12$VQVBJ5fa4h28kqJqQtknOeM6oKBgrBkmY8o6WKmPrgupTAJQdRg5.', 'Rafal', 'Adamski', 123123123);
-INSERT INTO "public"."users" VALUES (6, 'drmundo1235@gmail.com', '$2y$12$MSkfUgCr5A8wYGJ.UXrTQ.5RTSU9OvT.R5Lpx8QlmbQoQNYWQ1Btq', 'Dr', 'Mundo', 876567566);
-INSERT INTO "public"."users" VALUES (8, 'dabba9@gmail.com', '$2y$12$sm78IFX5kE1b6MzSvkshIuR4w1Fdxca//MZkZ6.1mG65BkFUHstBy', 'Damian', 'Bartłomiejski', 123455345);
+INSERT INTO "public"."users" VALUES (2, 'jsnow@pk.edu.pl', '$2y$12$zAGRkKNyCp1WQnXGSbVsXe7XaL75OQqUIbH6dk1DHATprH44HKp2G', 'John', 'Snow', 123123123, 2, '2023-02-17 13:53:05.194319');
+INSERT INTO "public"."users" VALUES (3, 'grabikwiktoria60@gmail.com', '$2y$12$V2bQfBdwuhTLalEyLI1ZJOXLs3QLWCuqZQ8AGpKwc7YTzFVMNHwyK', 'Wiktoria', 'Grabik', 12312343, 2, '2023-02-17 13:53:05.194319');
+INSERT INTO "public"."users" VALUES (4, 'maciek1234@gmail.com', '$2y$12$lGGn.DX3P0Jgugt6wFrUBuQrzAMp/5IkQqIqkA8sppGtTh3xnLw3m', 'Maciej', 'Nowak', 1234562354, 2, '2023-02-17 13:53:05.194319');
+INSERT INTO "public"."users" VALUES (5, 'dabba9@gmail.com', '$2y$12$kWX0tbe9i.QZ8xJlvHU32u4gi.s9OM2jsL6GgIk4/5ggR3gxG2MKm', 'Damian', 'Bartłomiejski', 123455345, 2, '2023-02-17 13:53:05.194319');
+INSERT INTO "public"."users" VALUES (6, 'drmundo1235@gmail.com', '$2y$12$MSkfUgCr5A8wYGJ.UXrTQ.5RTSU9OvT.R5Lpx8QlmbQoQNYWQ1Btq', 'Dr', 'Mundo', 876567566, 2, '2023-02-17 13:53:05.194319');
+INSERT INTO "public"."users" VALUES (1, 'ruffaaw@gmail.com', '$2y$12$VQVBJ5fa4h28kqJqQtknOeM6oKBgrBkmY8o6WKmPrgupTAJQdRg5.', 'Rafal', 'Adamski', 123123123, 1, '2023-02-17 13:53:05.194319');
+
+-- ----------------------------
+-- Function structure for add_date_user
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_date_user"();
+CREATE OR REPLACE FUNCTION "public"."add_date_user"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$
+BEGIN
+    NEW.date_add := NOW();
+    RETURN NEW;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
 
 -- ----------------------------
 -- Function structure for uuid_generate_v1
@@ -226,12 +241,19 @@ SELECT setval('"public"."products_id_seq"', 24, true);
 -- ----------------------------
 ALTER SEQUENCE "public"."users_id_seq"
 OWNED BY "public"."users"."id";
-SELECT setval('"public"."users_id_seq"', 9, true);
+SELECT setval('"public"."users_id_seq"', 21, true);
 
 -- ----------------------------
 -- Primary Key structure for table products
 -- ----------------------------
 ALTER TABLE "public"."products" ADD CONSTRAINT "products_pk" PRIMARY KEY ("id");
+
+-- ----------------------------
+-- Triggers structure for table users
+-- ----------------------------
+CREATE TRIGGER "trigger_add_date_user" BEFORE INSERT ON "public"."users"
+FOR EACH ROW
+EXECUTE PROCEDURE "public"."add_date_user"();
 
 -- ----------------------------
 -- Primary Key structure for table users
