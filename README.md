@@ -33,9 +33,9 @@ Website for people who want to buy electronic equipment.
 
 ## Screenshots
 
- ![Login Page](./screens/s1.png)
- ![Homepage](./screens/s2.png)
- ![Searching](./screens/s3.png)
+ ![Login Page](./screens/sc1.png)
+ ![Homepage](./screens/sc2.png)
+ ![Searching](./screens/sc3.png)
 
 ## Team
 - Rafał Ciupek
