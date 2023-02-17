@@ -124,6 +124,19 @@ nav>div>a{
     outline: none;
 }
 
+button.button{
+    width: 60%;
+    height: 50%;
+    background: #E6000C;
+    border-radius: 50px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 0 2em 0;
+    font-size: 1.0em;
+    color: #fcfcfc;
+    margin-top: 0.5em;
+}
+
 div> form> button {
     width: 43%;
     height: 10%;

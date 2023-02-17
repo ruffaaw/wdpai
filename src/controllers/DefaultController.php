@@ -8,7 +8,7 @@ class DefaultController extends AppController
         $this->render('login');
     }
 
-    public function shoppingC() {
-        $this->render('login');
+    public function shoppingCart() {
+        $this->render('shopping-cart');
     }
 }

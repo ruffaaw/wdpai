@@ -6,12 +6,10 @@
         </form>
     </div>
     <div class="search-bar" >
-        <form>
-            <input id="search-input" type="text" placeholder="search...">
-        </form>
+        <input placeholder="search">
     </div>
     <div class="shopping-cart" >
-        <a href="shoppingCart">
+        <a href="displayCart">
             <form>
                 <i class="fa-solid fa-cart-shopping"></i>
             </form>

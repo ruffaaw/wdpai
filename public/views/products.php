@@ -9,10 +9,9 @@
 
     <script src="https://kit.fontawesome.com/7b27ec48b4.js" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="./public/js/search.js"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/drive.js" defer></script>
     <script type="text/javascript" src="./public/js/zooming.js" defer></script>
-    <script type="text/javascript" src="./public/js/logout.js"></script>
     <title> HOMEPAGE</title>
 </head>
 
@@ -26,14 +25,15 @@
             <?php require('public/views/common/header-bar.php'); ?>
             <section class="products">
                 <?php foreach ($products as $product): ?>
-                <div id="product-1">
+                <div id=<?$product->getId()?>>
                     <img src="public/uploads/<?= $product-> getImage(); ?>"onmouseover="zoomIn(event)">
                     <div>
                         <h1><?= $product-> getName(); ?></h1>
                         <p><?= $product-> getPrice(); ?> PLN</p>
-                        <div class="add-to-cart">
-                            <a href="#"  class="button">Add to cart</a>
-                        </div>
+                        <form class="cartButton" action="addToCart" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $product->getId() ?>">
+                            <button type="submit" class="button" onclick="goBack() id="cartButton">Add to cart</button>
+                        </form>
                     </div>
                 </div>
                 <?php endforeach;?>
@@ -42,15 +42,16 @@
     </div>
 </body>
 
-<template id="product-template">
-    <div id="">
-        <img src="">
+<template id="product-template"">
+    <div id= "product-1">
+        <img src="title"onmouseover="zoomIn(event)">
         <div>
-            <h1>name</h1>
-            <p>price</p>
+            <h1>Name</h1>
+            <p>Price PLN</p>
             <div class="add-to-cart">
                 <a href="#"  class="button">Add to cart</a>
             </div>
         </div>
     </div>
 </template>
+

@@ -47,9 +47,10 @@
                         <div>
                             <h1><?= $product-> getName(); ?></h1>
                             <p><?= $product-> getPrice(); ?> PLN</p>
-                            <div class="add-to-cart">
-                                <a href="#"  class="button">Add to cart</a>
-                            </div>
+                            <form class="cartButton" action="addToCart" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $product->getId() ?>">
+                                <button type="submit" class="button">Add to cart</button>
+                            </form>
                         </div>
                     </div>
                 <?php endforeach;?>

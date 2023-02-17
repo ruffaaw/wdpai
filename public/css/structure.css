@@ -86,11 +86,11 @@ header {
     margin: 0 2em;
 }
 
-.search-bar>form {
+.search-bar {
     justify-content: right;
 }
 
-.search-bar>form>input {
+.search-bar>input {
     width: 50%;
     justify-content: right;
 }

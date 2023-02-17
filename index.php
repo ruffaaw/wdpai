@@ -17,11 +17,10 @@ Routing::post('search', 'ProductController');
 Routing::post('register', 'RegisterController');
 Routing::post('loginButtons', 'SecurityController');
 Routing::post('login', 'SecurityController');
-Routing::post('addProject', 'ProjectController');
-Routing::post('searchProjects','ProjectController');
-Routing::get('shopping-cart','DefaultController');
 Routing::post('sort','ProductController');
 Routing::post('logout', 'SecurityController');
+Routing::post('addToCart', 'CartController');
+Routing::post('displayCart', 'CartController');
 
 Routing::run($path);
 
