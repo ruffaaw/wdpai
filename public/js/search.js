@@ -48,11 +48,12 @@ search.addEventListener("keyup", function (event) {
         const name = clone.querySelector("h1");
         name.innerHTML = product.name;
         const price = clone.querySelector("p");
-        price.innerHTML = product.price;
+        price.innerHTML = `${product.price} PLN`;
         const hidden = clone.querySelector("input");
-        hidden.innerHTML = product.hidden;
+        hidden.value = product.hidden;
         const button = clone.querySelector("button");
-        button.innerText = product.button;
+        button.innerHTML = `Add to cart`;
+        productContainer.appendChild(clone);
 
         productContainer.appendChild(clone);
 }

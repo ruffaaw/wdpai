@@ -42,17 +42,5 @@
     </div>
 </body>
 
-<template id="product-template"">
-    <div id= "product-1">
-        <img src="title"onmouseover="zoomIn(event)">
-        <div>
-            <h1>Name</h1>
-            <p>Price PLN</p>
-            <form class="cartButton" action="addToCart" method="POST">
-                <input type="hidden" name="id" value="id">
-                <button type="submit" class="button" id="cartButton">Add to cart</button>
-            </form>
-        </div>
-    </div>
-</template>
+<?php require('public/views/common/template-search.php'); ?>
 

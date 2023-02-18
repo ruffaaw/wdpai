@@ -38,7 +38,7 @@
             <?php require('public/views/common/header-bar.php'); ?>
             <section class="products">
                 <?php foreach ($products as $product): ?>
-                    <div id="product-1">
+                    <div id=<?$product->getId()?>>
                         <img src="public/uploads/<?= $product-> getImage(); ?>" onmouseover="zoomIn(event)">
                         <div>
                             <h1><?= $product-> getName(); ?></h1>
@@ -54,3 +54,5 @@
         </main>
     </div>
 </body>
+
+<?php require('public/views/common/template-search.php'); ?>
