@@ -25,17 +25,17 @@
             <?php require('public/views/common/header-bar.php'); ?>
             <section class="products">
                 <?php foreach ($products as $product): ?>
-                <div id=<?$product->getId()?>>
-                    <img src="public/uploads/<?= $product-> getImage(); ?>"onmouseover="zoomIn(event)">
-                    <div>
-                        <h1><?= $product-> getName(); ?></h1>
-                        <p><?= $product-> getPrice(); ?> PLN</p>
-                        <form class="cartButton" action="addToCart" method="POST">
-                            <input type="hidden" name="id" value="<?php echo $product->getId() ?>">
-                            <button type="submit" class="button" id="cartButton">Add to cart</button>
-                        </form>
+                    <div id=<?$product->getId()?>>
+                        <img src="public/uploads/<?= $product-> getImage(); ?>"onmouseover="zoomIn(event)">
+                        <div>
+                            <h1><?= $product-> getName(); ?></h1>
+                            <p><?= $product-> getPrice(); ?> PLN</p>
+                            <form class="cartButton" action="addToCart" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $product->getId() ?>">
+                                <button type="submit" class="button" id="cartButton">Add to cart</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
                 <?php endforeach;?>
             </section>
         </main>

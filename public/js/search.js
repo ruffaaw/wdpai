@@ -31,29 +31,27 @@ search.addEventListener("keyup", function (event) {
     }
 });
 
-    function loadProducts(products) {
-        products.forEach(product => {
-            console.log(product);
-            createProduct(product);
-        });
-    }
+function loadProducts(products) {
+    products.forEach(product => {
+        createProduct(product);
+    });
+}
 
-    function createProduct(product) {
-        const template = document.querySelector("#product-template");
+function createProduct(product) {
+    const template = document.querySelector("#product-template");
 
-        const clone = template.content.cloneNode(true);
+    const clone = template.content.cloneNode(true);
 
-        const image = clone.querySelector("img");
-        image.src = `/public/uploads/${product.image}`;
-        const name = clone.querySelector("h1");
-        name.innerHTML = product.name;
-        const price = clone.querySelector("p");
-        price.innerHTML = `${product.price} PLN`;
-        const hidden = clone.querySelector("input");
-        hidden.value = product.hidden;
-        const button = clone.querySelector("button");
-        button.innerHTML = `Add to cart`;
-        productContainer.appendChild(clone);
+    const image = clone.querySelector("img");
+    image.src = `/public/uploads/${product.image}`;
+    const name = clone.querySelector("h1");
+    name.innerHTML = product.name;
+    const price = clone.querySelector("p");
+    price.innerHTML = `${product.price} PLN`;
+    const hidden = clone.querySelector("input");
+    hidden.value = `${product.id}`;
+    const button = clone.querySelector("button");
+    button.innerHTML = `Add to cart`;
 
-        productContainer.appendChild(clone);
+    productContainer.appendChild(clone);
 }

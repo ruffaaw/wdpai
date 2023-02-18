@@ -1,5 +1,5 @@
 <template id="product-template">
-    <div id="product-{{product.id}}">
+    <div id="{{product.id}}">
         <img src="{{product.image}}" onmouseover="zoomIn(event)">
         <div>
             <h1>{{product.name}}</h1>
