@@ -19,8 +19,10 @@ class CartController extends AppController
         $id_product = $_POST['id'];
 
         $this->cartRepository->insertIntoCart($id_user, $id_product);
-        $cart = $this->cartRepository->getCart();
-        $this->render('shopping-cart', ['cart' => $cart]);
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        $destination=basename(parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH));
+        header("Location: {$url}/{$destination}");
     }
 
     public function displayCart()
